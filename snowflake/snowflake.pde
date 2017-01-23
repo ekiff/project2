@@ -1,15 +1,29 @@
-// 1 layer thick
-//A(1) = 1
-//A(2) = 6
-//A(3) = 30
+float x1, y1, x2, y2, x3, y3;
+void setup() {
+  size(600, 600);
 
-// 3 layers thick
-//B(1) = 0
-//B(2) = 0
-//B(3) = 6
+  x1 = width/3; // bottom left X
+  y1 = height - height/3; // bottom left Y
+  x2 = width/2; // top middle X
+  y2 = height/3; // top middle Y
+  x3 = width - width/3; // bottom right X
+  y3 = height - height/3; // bottom right Y
 
-// G(3) = 6
-// G(3) = gcd (A(3) ,  B(3))
+}
+void draw() {
+   background(238, 44, 44);
+   drawTriangle(x1, y1, x2, y2, x3, y3 ); //drawTriangle instead of triangle
+  } 
 
-// find sum from n = 3 until it equals 10^7 for G(n)
-// must find formulas for A(n) and B(n)
+    
+    void drawTriangle(float x1, float y1, float x2, float y2, float x3, float y3) {
+        triangle(x1, y1, x2, y2, x3, y3);
+       if (x1 - x2 < 80) {
+        drawTriangle( x1, y1, x2, y2, x3, y3);
+       // drawTriangle(x1, y1, x2, y2, x3, y3);
+       // drawTriangle(x1, y1, x2, y2, x3, y3);
+       // drawTriangle(x1, y1, x2, y2, x3, y3);
+      }
+      
+      
+    }
